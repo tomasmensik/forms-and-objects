@@ -1,0 +1,53 @@
+
+.first{
+    background-color: aquamarine;
+}
+
+.second{
+    background-color: blueviolet;
+}
+
+.third{
+    background-color: coral;
+}  
+
+
+.fourth {
+    margin-top: 60px;
+}
+
+.fifth {
+    margin-top: 30px;
+}
+
+.sixth {
+    margin-top: 120px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.navbar-brand,
+.navbar-nav {
+    margin: 20px 0px;
+}
+
+li {
+    margin: 0px 100px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: grey;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.form-group{
+    background-color: violet;
+    width: 300px;
+    margin: auto;
+}
