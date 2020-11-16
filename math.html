@@ -57,45 +57,58 @@
         <div class="col-xl-4"></div>
     </div>
 
-    <div class="row text-center">
+    <div class="row text-center sixth">
         <div class="col-lg-3 first"></div>
         <div class="col-lg-3 second">
             <form action="">
                 <div class="row">
-                    <div class="form-group">
+                    <div class="form-group bg-dark text-white">
                         <label for="choice">What do you want?</label>
-                        <select name="choice" id="choice" class="form-control">
+                        <select name="choice" id="choice" class="form-control" onchange="getValue()">
                             <option value="circle">Circle</option>
                             <option value="sphere">Sphere</option>
                             <option value="square">Square</option>
                             <option value="cube">Cube</option>
                             <option value="rectangle">Rectangle</option>
-                            <option value="rectanglep">Rectangular Prism</option>
-                            <option value="triangle">Triangle</option>
-                            <option value="trianglep">Triangular Prism</option>
+                            <option value="rectanglePrism">Rectangular Prism</option>
+                            <option value="triangle">Triangle (Equilateral)</option>
+                            <option value="trianglePrism">Triangular Prism</option>
                         </select>
                     </div>
                 </div>
-                <div id="zmena">
+                <div id="input">
                     <div class="row">
-                        <div class="form-group">
-                            <label for="radius">Radius</label>
-                            <input type="text" name="radius" id="radius" class="form-control">
+                        <div class="form-group bg-dark text-white">
+                            <label for="value1">Radius</label>
+                            <input type="text" name="value1" id="value1" class="form-control" placeholder="Please enter a number in meters">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group">
-                            <label for="username">π</label>
-                            <input type="text" name="username" id="username" class="form-control" placeholder="3.14159265359" disabled>
+                        <div class="form-group bg-dark text-white">
+                            <label for="value2">π</label>
+                            <input type="text" name="value2" id="value2" class="form-control" placeholder="3.14159265359" disabled>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="col-lg-3">
-            <img src="img/calc/circle.gif" alt="">
+        <div class="col-lg-3 third">
+            <div id="obrazek">
+                <div><img class="fifth" src="img/calc/circle.gif" alt=""></div>
+                <div class="spodek">
+                    <h2>Circumference: </h2>
+                    <h2>Area: </h2>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-3 third"></div>
+        <div class="col-lg-3"></div>
+    </div>
+    <div>
+        <div class="col-lg-12 row">
+            <div class="form-group bg-dark text-white">
+                <button id="buttonZmena" onclick="javascript: circleF();" type="button" class="btn btn-dark btn-lg btn-block">Calculate</button>
+            </div>
+        </div>
     </div>
 
     <!-- zacatek footeru -->
@@ -139,6 +152,7 @@
 
 
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/javascript.js"></script>
 </body>
 
 </html>

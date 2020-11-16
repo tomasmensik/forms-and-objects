@@ -1,5 +1,4 @@
-
-.first{
+ /* .first{
     background-color: aquamarine;
 }
 
@@ -9,7 +8,7 @@
 
 .third{
     background-color: coral;
-}  
+}  */
 
 
 .fourth {
@@ -47,7 +46,11 @@ li {
 }
 
 .form-group{
-    background-color: violet;
+    border-radius: 10px;
     width: 300px;
     margin: auto;
+}
+
+.spodek {
+    margin-top: 30px;
 }
