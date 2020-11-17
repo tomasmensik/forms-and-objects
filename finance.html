@@ -50,13 +50,71 @@
     <div class="row">
         <div class="col-xl-4"></div>
         <div class="col-xl-4 text-center fifth">
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, assumenda? Quod voluptate
-                porro officiis? Saepe corrupti obcaecati, impedit provident ratione optio fuga dicta dolor nobis quo?
-                Animi perspiciatis odit tempora? Facilis dolor mollitia ipsa?</p>
+            <p class="lead">There is a couple of calculators that may help you. If you happened to use decimal numbers, please use <b>the dot</b>, thank you.</p>
         </div>
         <div class="col-xl-4"></div>
     </div>
 
+    <div class="row text-center sixth">
+        <div class="col-lg-3 first"></div>
+        <div class="col-lg-3 second">
+            <form action="">
+                <div class="row">
+                    <div class="form-group bg-dark text-white">
+                        <label for="choice3">What do you want?</label>
+                        <select name="choice3" id="choice3" class="form-control" onchange="getValue3()">
+                            <!-- <option value="mortgage">How much will you pay monthly?</option> -->
+                            <option value="income">How much will your savings grow?</option>
+                            <option value="expense">How long will your savings last?</option>
+                            <option value="gas">How much will your gas cost?</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="input">
+                    <div class="row">
+                        <div class="form-group bg-dark text-white">
+                            <label for="value1">Initial Investment</label>
+                            <input type="text" name="value1" id="value1" class="form-control" placeholder="Please enter a number in dollars">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group bg-dark text-white">
+                            <label for="value2">Additional Yearly Deposits</label>
+                            <input type="text" name="value2" id="value2" class="form-control" placeholder="Please enter a number in dollars">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group bg-dark text-white">
+                            <label for="value3">Interest Rate %</label>
+                            <input type="text" name="value3" id="value3" class="form-control" placeholder="Please enter a percentage number">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group bg-dark text-white">
+                            <label for="value4">Years Invested</label>
+                            <input type="text" name="value4" id="value4" class="form-control" placeholder="Please enter a number in years">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3 third">
+            <div id="obrazek">
+                <div><img src="img/fin/savings.png" alt=""></div>
+                <div class="spodek">
+                    <h2>Savings: </h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+    <div>
+        <div class="col-lg-12 row fourth">
+            <div class="form-group bg-dark text-white">
+                <button id="buttonZmena" onclick="javascript: SavingsF();" type="button" class="btn btn-dark btn-lg btn-block">Calculate</button>
+            </div>
+        </div>
+    </div>
 
     <!-- zacatek footeru -->
 

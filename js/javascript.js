@@ -749,3 +749,283 @@ function AccelerationF() {
                                                     `;
 zmena.innerHTML = x;    
 };
+
+//FINANCE
+
+function getValue3() {
+    let x = document.getElementById('choice3').value;
+
+    // if (x == "mortgage") {
+    //     document.getElementById('input').innerHTML =                 
+    //                                                     `<div id="input">
+    //                                                     <div class="row">
+    //                                                         <div class="form-group bg-dark text-white">
+    //                                                             <label for="value1">Purchase Price</label>
+    //                                                             <input type="text" name="value1" id="value1" class="form-control" placeholder="Please enter a number in dollars">
+    //                                                         </div>
+    //                                                     </div>
+    //                                                     <div class="row">
+    //                                                         <div class="form-group bg-dark text-white">
+    //                                                             <label for="value2">Down Payment</label>
+    //                                                             <input type="text" name="value2" id="value2" class="form-control" placeholder="Please enter a number in dollars">
+    //                                                         </div>
+    //                                                     </div>
+    //                                                     <div class="row">
+    //                                                         <div class="form-group bg-dark text-white">
+    //                                                             <label for="value3">Interest rate %</label>
+    //                                                             <input type="text" name="value3" id="value3" class="form-control" placeholder="Please enter a percentage number">
+    //                                                         </div>
+    //                                                     </div>
+    //                                                     <div class="row">
+    //                                                         <div class="form-group bg-dark text-white">
+    //                                                             <label for="value4">Term of loan</label>
+    //                                                             <input type="text" name="value4" id="value4" class="form-control" placeholder="Please enter a number in months">
+    //                                                         </div>
+    //                                                     </div>
+    //                                                 </div>`;
+    //     document.getElementById('obrazek').innerHTML =
+    //                                                 `<div id="obrazek">
+    //                                                     <div><img src="img/fin/mortgage.png" alt=""></div>
+    //                                                     <div class="spodek">
+    //                                                         <h2>Payment: </h2>
+    //                                                     </div>
+    //                                                 </div>`;
+    //     document.getElementById( "buttonZmena" ).setAttribute( "onClick", "javascript: MortgageF();" );
+    // }
+    if(x == "income"){
+        document.getElementById('input').innerHTML =                 
+                                                        `<div id="input">
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value1">Initial Investment</label>
+                                                                <input type="text" name="value1" id="value1" class="form-control" placeholder="Please enter a number in dollars">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value2">Additional Yearly Deposits</label>
+                                                                <input type="text" name="value2" id="value2" class="form-control" placeholder="Please enter a number in dollars">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value3">Interest Rate %</label>
+                                                                <input type="text" name="value3" id="value3" class="form-control" placeholder="Please enter a percentage number">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value4">Years Invested</label>
+                                                                <input type="text" name="value4" id="value4" class="form-control" placeholder="Please enter a number in years">
+                                                            </div>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById('obrazek').innerHTML =
+                                                    `<div id="obrazek">
+                                                        <div><img src="img/fin/savings.png" alt=""></div>
+                                                        <div class="spodek">
+                                                            <h2>Savings: </h2>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById( "buttonZmena" ).setAttribute( "onClick", "javascript: SavingsF();" );
+    }
+    else if(x == "expense"){
+        document.getElementById('input').innerHTML =                 
+                                                        `<div id="input">
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value1">Current Savings</label>
+                                                                <input type="text" name="value1" id="value1" class="form-control" placeholder="Please enter a number in dollars">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value2">Yearly Withdrawals</label>
+                                                                <input type="text" name="value2" id="value2" class="form-control" placeholder="Please enter a number in dollars">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value3">Investment Return %</label>
+                                                                <input type="text" name="value3" id="value3" class="form-control" placeholder="Please enter a percentage number">
+                                                            </div>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById('obrazek').innerHTML =
+                                                    `<div id="obrazek">
+                                                        <div><img src="img/fin/savingslast.png" alt=""></div>
+                                                        <div class="spodek">
+                                                            <h2>Years: </h2>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById( "buttonZmena" ).setAttribute( "onClick", "javascript: ExpenseF();" );
+    }
+    else if(x == "gas"){
+        document.getElementById('input').innerHTML =                 
+                                                        `<div id="input">
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value1">Kilometers driven</label>
+                                                                <input type="text" name="value1" id="value1" class="form-control" placeholder="Please enter a number in kilometers">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value2">Fuel Efficiency (litre / 100km)</label>
+                                                                <input type="text" name="value2" id="value2" class="form-control" placeholder="Please enter a number in litres">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value3">Cost of Gas (per litre)</label>
+                                                                <input type="text" name="value3" id="value3" class="form-control" placeholder="Please enter a number in dollars">
+                                                            </div>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById('obrazek').innerHTML =
+                                                    `<div id="obrazek">
+                                                        <div><img src="img/fin/gas.png" alt=""></div>
+                                                        <div class="spodek">
+                                                            <h2>Payment: </h2>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById( "buttonZmena" ).setAttribute( "onClick", "javascript: GasF();" );
+    }
+};
+
+
+// function mortgage(value1, value2, value3, value4){
+//     platbaBanka = value1;
+//     platbaTvoje = value2;
+//     interest = value3;
+//     mesice = value4;
+//     platba = platbaBanka - platbaTvoje;
+
+//     interestZaMesic = (platba * (interest*.01))/mesice;
+//     platbaZaMesic = ((platba/mesice) + interestZaMesic).toFixed(2);
+//     return platbaZaMesic;
+// };
+
+//Z nejakeho duvodu to nefunguje
+
+function gas(value1, value2, value3){
+    km = value1;
+    spotrebaAuta = value2;
+    cenaBenzinu = value3;
+
+    litry=(km/100)*spotrebaAuta;
+    cenaBenzinuAll=litry*cenaBenzinu;
+    return cenaBenzinuAll;
+};
+
+function savingsLast(value1, value2, value3){
+    savingsZacatek = value1;
+    withdrawal = value2;
+    interest = value3;
+    savings = savingsZacatek - withdrawal;
+    i = 1;
+    do {
+        savingsA=(savings*(interest*.01));
+        savings=savings+savingsA;
+        savings=savings-withdrawal;
+        i++;
+        
+    } while (savings>0);
+
+    i = i-1;
+    return i;
+};
+
+function savings(value1, value2, value3, value4){
+    penizeZacatek = value1;
+    addPenize = value2;
+    interest = value3;
+    years = value4;
+    penize=penizeZacatek+(penizeZacatek*(interest*.01));
+    i=1;
+
+    do {
+        penize=penize+addPenize;
+        penize=penize+(penize*(interest*.01));
+        i++;
+    } while (i<years);
+
+    return penize;
+};
+
+// function MortgageF() {
+//     var value1 = parseFloat(document.getElementById('value1').value);
+//     var value2 = parseFloat(document.getElementById('value2').value);
+//     var value3 = parseFloat(document.getElementById('value3').value);
+//     var value4 = parseFloat(document.getElementById('value4').value);
+
+//     let paymentMortgage = mortgage(value1, value2, value3, value4).toFixed(2);
+//     let x =
+//                                                         `
+//                                                     <div id="obrazek">
+//                                                     <div><img src="img/fin/mortgage.png" alt=""></div>
+//                                                     <div class="spodek">
+//                                                         <h2>Payment: ${paymentMortgage}</h2>
+//                                                     </div>
+//                                                     </div>
+//                                                     `;
+// zmena.innerHTML = x;    
+// };
+
+function SavingsF() {
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
+    var value3 = parseFloat(document.getElementById('value3').value);
+    var value4 = parseFloat(document.getElementById('value4').value);
+
+    let savingsVysledek = savings(value1, value2, value3, value4).toFixed(2);
+    let x =
+                                                        `
+                                                    <div id="obrazek">
+                                                    <div><img src="img/fin/savings.png" alt=""></div>
+                                                    <div class="spodek">
+                                                        <h2>Savings: $${savingsVysledek}</h2>
+                                                        <p>At the end of <b>${value4}</b> years, your savings will have grown to $<b>${savingsVysledek}</b>.</p>
+                                                    </div>
+                                                    </div>
+                                                    `;
+zmena.innerHTML = x;    
+};
+
+function ExpenseF() {
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
+    var value3 = parseFloat(document.getElementById('value3').value);
+
+    let expense = savingsLast(value1, value2, value3).toFixed(2);
+    let x =
+                                                        `
+                                                    <div id="obrazek">
+                                                    <div><img src="img/fin/savingsLast.png" alt=""></div>
+                                                    <div class="spodek">
+                                                        <h2>Years: ${expense}</h2>
+                                                        <p>Your savings will last for <b>${expense}</b> years.</p>
+                                                    </div>
+                                                    </div>
+                                                    `;
+zmena.innerHTML = x;    
+};
+
+function GasF() {
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
+    var value3 = parseFloat(document.getElementById('value3').value);
+
+    let gasVysledek = gas(value1, value2, value3).toFixed(2);
+    let x =
+                                                        `
+                                                    <div id="obrazek">
+                                                    <div><img src="img/fin/gas.png" alt=""></div>
+                                                    <div class="spodek">
+                                                        <h2>Payment: $${gasVysledek}</h2>
+                                                        <p>The gas will cost $<b>${gasVysledek}</b> for your road trip.</p>
+                                                    </div>
+                                                    </div>
+                                                    `;
+zmena.innerHTML = x;    
+};
