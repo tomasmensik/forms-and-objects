@@ -1,3 +1,5 @@
+//MATHEMATICS
+
 const zmena = document.getElementById('obrazek');
 
 function getValue() {
@@ -22,7 +24,7 @@ function getValue() {
 
         document.getElementById('obrazek').innerHTML =
                                                     `<div id="obrazek">
-                                                        <div><img class="fifth" src="img/calc/circle.gif" alt=""></div>
+                                                        <div><img src="img/calc/circle.gif" alt=""></div>
                                                         <div class="spodek">
                                                             <h2>Circumference: </h2>
                                                             <h2>Area: </h2>
@@ -48,7 +50,7 @@ function getValue() {
         document.getElementById('obrazek').innerHTML =
                                                     `
                                                     <div id="obrazek">
-                                                        <div><img class="fifth" src="img/calc/sphere.gif" alt=""></div>
+                                                        <div><img src="img/calc/sphere.gif" alt=""></div>
                                                         <div class="spodek">
                                                             <h2>Volume: </h2>
                                                             <h2>Surface Area: </h2>
@@ -70,7 +72,7 @@ function getValue() {
         document.getElementById('obrazek').innerHTML =
                                                         `
                                                     <div id="obrazek">
-                                                    <div><img class="fifth" src="img/calc/square.gif" alt=""></div>
+                                                    <div><img src="img/calc/square.gif" alt=""></div>
                                                     <div class="spodek">
                                                         <h2>Area: </h2>
                                                         <h2>Perimeter: </h2>
@@ -92,7 +94,7 @@ function getValue() {
         document.getElementById('obrazek').innerHTML =
                                                         `
                                                     <div id="obrazek">
-                                                    <div><img class="fifth" src="img/calc/cube.gif" alt=""></div>
+                                                    <div><img src="img/calc/cube.gif" alt=""></div>
                                                     <div class="spodek">
                                                         <h2>Volume: </h2>
                                                         <h2>Area: </h2>
@@ -118,7 +120,7 @@ function getValue() {
                                                     </div>`;
         document.getElementById('obrazek').innerHTML =
                                                     `<div id="obrazek">
-                                                    <div><img class="fifth" src="img/calc/rectangle.gif" alt=""></div>
+                                                    <div><img src="img/calc/rectangle.gif" alt=""></div>
                                                     <div class="spodek">
                                                         <h2>Area: </h2>
                                                         <h2>Perimeter: </h2>
@@ -151,7 +153,7 @@ function getValue() {
         document.getElementById('obrazek').innerHTML =
                                                         `
                                                     <div id="obrazek">
-                                                    <div><img class="fifth" src="img/calc/rectangularPrism.gif" alt=""></div>
+                                                    <div><img src="img/calc/rectangularPrism.gif" alt=""></div>
                                                     <div class="spodek">
                                                         <h2>Volume: </h2>
                                                         <h2>Area: </h2>
@@ -178,7 +180,7 @@ function getValue() {
         document.getElementById('obrazek').innerHTML =
                                                         `
                                                     <div id="obrazek">
-                                                    <div><img class="fifth" src="img/calc/triangle.gif" alt=""></div>
+                                                    <div><img src="img/calc/triangle.gif" alt=""></div>
                                                     <div class="spodek">
                                                         <h2>Area: </h2>
                                                         <h2>Perimeter: </h2>
@@ -218,7 +220,7 @@ function getValue() {
         document.getElementById('obrazek').innerHTML =
                                                         `
                                                         <div id="obrazek">
-                                                        <div><img class="fifth" src="img/calc/triangularPrism.png" alt=""></div>
+                                                        <div><img src="img/calc/triangularPrism.png" alt=""></div>
                                                         <div class="spodek">
                                                             <h2>Volume: </h2>
                                                             <h2>Area: </h2>
@@ -276,8 +278,9 @@ function rectangleArea(value1, value2) {
 };
 
 function rectanglePerimeter(value1, value2) {
-    perimeter = 2 * (value1 + value2)
-    return perimeter;
+
+ perimeter = value1+value2+value1+value2;
+ return perimeter;
 };
 
 function rectangularPrismVolume(value1, value2, value3) {
@@ -301,26 +304,27 @@ function trianglePerimeter(value1) {
 };
 
 function trianglePrismVolume(value1, value2, value3, value4) {
-    volume = (1 / 4) * value1 * Math.sqrt((value2 + value3 + value4) * (value3 + value4 - value2) * (value4 + value2 - value3) * (value2 + value3 - value4));
+    volume = (1 / 4) * value1 * (Math.sqrt((value2 + value3 + value4) * (value3 + value4 - value2) * (value4 + value2 - value3) * (value2 + value3 - value4)));
     return volume;
 };
 
 function trianglePrismArea(value1, value2, value3, value4) {
-    top = (1 / 4) * Math.sqrt((value2 + value3 + value4) * (value3 + value4 - value2) * (value4 + value2 - value3) * (value2 + value3 - value4));
+    top1=((value2 + value3 + value4) * (value3 + value4 - value2) * (value4 + value2 - value3) * (value2 + value3 - value4));
+    top2=(1/4)*(Math.sqrt(top1));
     lateral = value1 * (value2 + value3 + value4);
-    area = (top * 2) + lateral;
+    area = (top2 * 2) + lateral;
     return area;
 };
 
 function circleF() {
-    var value1 = document.getElementById('value1').value;
+    var value1 = parseFloat(document.getElementById('value1').value);
 
     let circumference = circleCircumference(value1).toFixed(2);
     let area = circleArea(value1).toFixed(2);
     let x =
                                                     `
                                                     <div id="obrazek">
-                                                    <div><img class="fifth" src="img/calc/circle.gif" alt=""></div>
+                                                    <div><img src="img/calc/circle.gif" alt=""></div>
                                                     <div class="spodek">
                                                         <h2>Circumference: ${circumference} m</h2>
                                                         <h2>Area: ${area} m&sup2; </h2>
@@ -333,14 +337,14 @@ function circleF() {
 
 
 function sphereF() {
-    var value1 = document.getElementById('value1').value;
+    var value1 = parseFloat(document.getElementById('value1').value);
 
     let volume = sphereVolume(value1).toFixed(2);
     let area = sphereSurfaceArea(value1).toFixed(2);
     let x =
                                                     `
                                                     <div id="obrazek">
-                                                        <div><img class="fifth" src="img/calc/sphere.gif" alt=""></div>
+                                                        <div><img src="img/calc/sphere.gif" alt=""></div>
                                                         <div class="spodek">
                                                             <h2>Volume: ${volume} m&sup3;</h2>
                                                             <h2>Surface Area: ${area} m&sup2;</h2>
@@ -351,14 +355,14 @@ function sphereF() {
 };
 
 function squareF() {
-    var value1 = document.getElementById('value1').value;
+    var value1 = parseFloat(document.getElementById('value1').value);
 
     let area = squareArea(value1).toFixed(2);
     let perimeter = squarePerimeter(value1).toFixed(2);
     let x =
                                                         `
                                                     <div id="obrazek">
-                                                    <div><img class="fifth" src="img/calc/square.gif" alt=""></div>
+                                                    <div><img src="img/calc/square.gif" alt=""></div>
                                                     <div class="spodek">
                                                         <h2>Area: ${area} m&sup2;</h2>
                                                         <h2>Perimeter: ${perimeter} m</h2>
@@ -369,14 +373,14 @@ function squareF() {
 };
 
 function cubeF() {
-    var value1 = document.getElementById('value1').value;
+    var value1 = parseFloat(document.getElementById('value1').value);
 
     let volume = cubeVolume(value1).toFixed(2);
     let area = cubeSurfaceArea(value1).toFixed(2);
     let x =
                                                         `
                                                     <div id="obrazek">
-                                                    <div><img class="fifth" src="img/calc/cube.gif" alt=""></div>
+                                                    <div><img src="img/calc/cube.gif" alt=""></div>
                                                     <div class="spodek">
                                                         <h2>Volume: ${volume} m&sup3;</h2>
                                                         <h2>Area: ${area} m&sup2;</h2>
@@ -387,15 +391,15 @@ zmena.innerHTML = x;
 };
 
 function rectangleF() {
-    var value1 = document.getElementById('value1').value;
-    var value2 = document.getElementById('value2').value;
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
 
     let area = rectangleArea(value1, value2).toFixed(2);
     let perimeter = rectanglePerimeter(value1, value2).toFixed(2);
     let x =
                                                         `
                                                     <div id="obrazek">
-                                                    <div><img class="fifth" src="img/calc/rectangle.gif" alt=""></div>
+                                                    <div><img src="img/calc/rectangle.gif" alt=""></div>
                                                     <div class="spodek">
                                                         <h2>Area: ${area} m&sup2;</h2>
                                                         <h2>Perimeter: ${perimeter} m</h2>
@@ -406,16 +410,16 @@ zmena.innerHTML = x;
 };
 
 function rectangularPrismF() {
-    var value1 = document.getElementById('value1').value;
-    var value2 = document.getElementById('value2').value;
-    var value3 = document.getElementById('value3').value;
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
+    var value3 = parseFloat(document.getElementById('value3').value);
 
     let volume = rectangularPrismVolume(value1, value2, value3).toFixed(2);
     let area = rectangularPrismSurfaceArea(value1, value2, value3).toFixed(2);
     let x =
                                                         `
                                                     <div id="obrazek">
-                                                    <div><img class="fifth" src="img/calc/rectangularPrism.gif" alt=""></div>
+                                                    <div><img src="img/calc/rectangularPrism.gif" alt=""></div>
                                                     <div class="spodek">
                                                         <h2>Volume: ${volume} m&sup3;</h2>
                                                         <h2>Area: ${area} m&sup2;</h2>
@@ -426,15 +430,15 @@ zmena.innerHTML = x;
 };
 
 function triangleF() {
-    var value1 = document.getElementById('value1').value;
-    var value2 = document.getElementById('value2').value;
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
 
     let area = triangleArea(value1, value2).toFixed(2);
     let perimeter = trianglePerimeter(value1).toFixed(2);
     let x =
                                                         `
                                                     <div id="obrazek">
-                                                    <div><img class="fifth" src="img/calc/triangle.gif" alt=""></div>
+                                                    <div><img src="img/calc/triangle.gif" alt=""></div>
                                                     <div class="spodek">
                                                         <h2>Area: ${area} m&sup2;</h2>
                                                         <h2>Perimeter: ${perimeter} m</h2>
@@ -447,20 +451,20 @@ zmena.innerHTML = x;
 
 
 function triangularPrismF() {
-    var value1 = document.getElementById('value1').value;
-    var value2 = document.getElementById('value2').value;
-    var value3 = document.getElementById('value3').value;
-    var value4 = document.getElementById('value4').value;
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
+    var value3 = parseFloat(document.getElementById('value3').value);
+    var value4 = parseFloat(document.getElementById('value4').value);
 
     let volume = trianglePrismVolume(value1, value2, value3, value4).toFixed(2);
     let area = trianglePrismArea(value1, value2, value3, value4).toFixed(2);
     let x =
                                                         `
                                                     <div id="obrazek">
-                                                    <div><img class="fifth" src="img/calc/triangularPrism.png" alt=""></div>
+                                                    <div><img src="img/calc/triangularPrism.png" alt=""></div>
                                                     <div class="spodek">
                                                         <h2>Volume: ${volume} m&sup3;</h2>
-                                                        <h2>Area: ${volume} m&sup2;</h2>
+                                                        <h2>Area: ${area} m&sup2;</h2>
                                                     </div>
                                                     </div>
                                                     `;
@@ -468,4 +472,280 @@ zmena.innerHTML = x;
 
 };
 
-console.log(trianglePrismArea(5,6,2,3));
+
+//PHYSICS
+
+function getValue2() {
+    let x = document.getElementById('choice2').value;
+
+    if (x == "potential") {
+        document.getElementById('input').innerHTML =                 
+                                                        `<div id="input">
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value1">Mass</label>
+                                                                <input type="text" name="value1" id="value1" class="form-control" placeholder="Please enter a number in kg">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value2">Height</label>
+                                                                <input type="text" name="value2" id="value2" class="form-control" placeholder="Please enter a number in meters">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value3">Gravitational acceleration</label>
+                                                                <input type="text" name="value3" id="value3" class="form-control" placeholder="9,80665 m/s&sup2;" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById('obrazek').innerHTML =
+                                                    `<div id="obrazek">
+                                                        <div><img src="img/phy/potential.png" alt=""></div>
+                                                        <div class="spodek">
+                                                            <h2>Potential Energy: </h2>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById( "buttonZmena" ).setAttribute( "onClick", "javascript: PotentialEnergyF();" );
+    }
+
+    else if (x == "kinetic") {
+        document.getElementById('input').innerHTML =                 
+                                                        `<div id="input">
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value1">Mass</label>
+                                                                <input type="text" name="value1" id="value1" class="form-control" placeholder="Please enter a number in kg">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value2">Velocity</label>
+                                                                <input type="text" name="value2" id="value2" class="form-control" placeholder="Please enter a number in m/s&sup2;">
+                                                            </div>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById('obrazek').innerHTML =
+                                                    `<div id="obrazek">
+                                                        <div><img src="img/phy/kinetic.png" alt=""></div>
+                                                        <div class="spodek">
+                                                            <h2>Kinetic Energy: </h2>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById( "buttonZmena" ).setAttribute( "onClick", "javascript: KineticEnergyF();" );
+    }
+
+    else if (x == "work") {
+        document.getElementById('input').innerHTML =                 
+                                                        `<div id="input">
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value1">Force</label>
+                                                                <input type="text" name="value1" id="value1" class="form-control" placeholder="Please enter a number in newtons">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value2">Displacement</label>
+                                                                <input type="text" name="value2" id="value2" class="form-control" placeholder="Please enter a number in meters">
+                                                            </div>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById('obrazek').innerHTML =
+                                                    `<div id="obrazek">
+                                                        <div><img src="img/phy/work.png" alt=""></div>
+                                                        <div class="spodek">
+                                                            <h2>Work: </h2>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById( "buttonZmena" ).setAttribute( "onClick", "javascript: WorkF();" );
+    }
+
+    else if (x == "freefall") {
+        document.getElementById('input').innerHTML =                 
+                                                        `<div id="input">
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value1">Initial Velocity</label>
+                                                                <input type="text" name="value1" id="value1" class="form-control" placeholder="Please enter a number in m/s&sup2;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value2">Time</label>
+                                                                <input type="text" name="value2" id="value2" class="form-control" placeholder="Please enter a number in seconds">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value3">Gravitational acceleration</label>
+                                                                <input type="text" name="value3" id="value3" class="form-control" placeholder="9,80665 m/s&sup2;" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById('obrazek').innerHTML =
+                                                    `<div id="obrazek">
+                                                        <div><img src="img/phy/freefall.png" alt=""></div>
+                                                        <div class="spodek">
+                                                            <h2>Height: </h2>
+                                                            <h2>Velocity: </h2>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById( "buttonZmena" ).setAttribute( "onClick", "javascript: FreeFallF();" );
+    }
+    
+    else if (x == "acceleration") {
+        document.getElementById('input').innerHTML =                 
+                                                        `<div id="input">
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value1">Initial Speed</label>
+                                                                <input type="text" name="value1" id="value1" class="form-control" placeholder="Please enter a number in m/s&sup2;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value2">Final speed</label>
+                                                                <input type="text" name="value2" id="value2" class="form-control" placeholder="Please enter a number in m/s&sup2;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="form-group bg-dark text-white">
+                                                                <label for="value3">Time</label>
+                                                                <input type="text" name="value3" id="value3" class="form-control" placeholder="Please eneter a number in seconds">
+                                                            </div>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById('obrazek').innerHTML =
+                                                    `<div id="obrazek">
+                                                        <div><img src="img/phy/acceleration.png" alt=""></div>
+                                                        <div class="spodek">
+                                                            <h2>Acceleration: </h2>
+                                                        </div>
+                                                    </div>`;
+        document.getElementById( "buttonZmena" ).setAttribute( "onClick", "javascript: AccelerationF();" );
+    }      
+};
+
+
+function kineticEnergy(value1, value2){
+    energy = (1/2)*value1*value2*value2;
+    return energy;
+}
+
+function potentialEnergy(value1, value2){
+    value3 = 9.80665;
+    energy = value1*value2*value3;
+    return energy;
+}
+
+function work(value1,value2){
+    workVsl = value1*value2;
+    return workVsl;
+}
+
+function freeFallVelocity(value1, value2){
+    value3 = 9.80665;
+    velocity = value1+(value2*value3);
+    return velocity;
+}
+
+function freeFallHeight(value2){
+    value3 = 9.80665;
+    height = (1/2)*(value3*value2*value2);
+    return height;
+}
+
+function accelerationFunkce(value1, value2, value3){
+    acceleration=(value2-value1)/value3;
+    return acceleration;
+}
+
+function KineticEnergyF() {
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
+
+    let energy = kineticEnergy(value1, value2).toFixed(2);
+    let x =
+                                                        `
+                                                    <div id="obrazek">
+                                                    <div><img src="img/phy/kinetic.png" alt=""></div>
+                                                    <div class="spodek">
+                                                        <h2>Kinetic Energy: ${energy} J</h2>
+                                                    </div>
+                                                    </div>
+                                                    `;
+zmena.innerHTML = x;    
+};
+
+function PotentialEnergyF() {
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
+
+    let energy = potentialEnergy(value1, value2).toFixed(2);
+    let x =
+                                                        `
+                                                    <div id="obrazek">
+                                                    <div><img src="img/phy/potential.png" alt=""></div>
+                                                    <div class="spodek">
+                                                        <h2>Potential Energy: ${energy} J</h2>
+                                                    </div>
+                                                    </div>
+                                                    `;
+zmena.innerHTML = x;    
+};
+
+function WorkF() {
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
+
+    let workV = work(value1, value2).toFixed(2);
+    let x =
+                                                        `
+                                                    <div id="obrazek">
+                                                    <div><img src="img/phy/work.png" alt=""></div>
+                                                    <div class="spodek">
+                                                        <h2>Work: ${workV} J</h2>
+                                                    </div>
+                                                    </div>
+                                                    `;
+zmena.innerHTML = x;    
+};
+
+function FreeFallF() {
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
+
+    let fallV = freeFallVelocity(value1, value2).toFixed(2);
+    let fallH = freeFallHeight(value2).toFixed(2);
+    let x =
+                                                        `
+                                                    <div id="obrazek">
+                                                    <div><img src="img/phy/freefall.png" alt=""></div>
+                                                    <div class="spodek">
+                                                        <h2>Height: ${fallH} meters</h2>
+                                                        <h2>Velocity: ${fallV} m/s&sup2;</h2>
+                                                    </div>
+                                                    </div>
+                                                    `;
+zmena.innerHTML = x;    
+};
+
+function AccelerationF() {
+    var value1 = parseFloat(document.getElementById('value1').value);
+    var value2 = parseFloat(document.getElementById('value2').value);
+    var value3 = parseFloat(document.getElementById('value3').value);
+
+    let accelerationVysledek = accelerationFunkce(value1, value2, value3).toFixed(2);
+    let x =
+                                                        `
+                                                    <div id="obrazek">
+                                                    <div><img src="img/phy/acceleration.png" alt=""></div>
+                                                    <div class="spodek">
+                                                        <h2>Acceleration: ${accelerationVysledek} m/s&sup2;</h2>
+                                                    </div>
+                                                    </div>
+                                                    `;
+zmena.innerHTML = x;    
+};
